@@ -16,6 +16,9 @@ class studentsFactory extends Factory
         return [
             'firstname' => $this->faker->firstname(),
             'lastname' => $this->faker->lastname(),
+            'birthdate' => $this->faker->date(),
+            'sex' => array_rand(['MALE', 'FEMALE']),
+            'address' => $this->faker->address(),
             'year' => rand(1, 4),
             'course' => array_rand([
                 'BSBA' => 'BSBA',
@@ -23,8 +26,11 @@ class studentsFactory extends Factory
                 'HRT' => 'HRT',
                 'BSA' => 'BSA'
             ]),
-            'sex' => array_rand(['MALE', 'FEMALE']),
-            'address' => $this->faker->address(),
+            'section' => array_rand([
+                'A' => 'A',
+                'B' => 'B',
+                'C' => 'C',
+            ]),
         ];
     }
 }
